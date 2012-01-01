@@ -2,32 +2,36 @@ export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-alias ll="ls -alF"
+alias ll="ls -aFl"
 
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+bindkey -e
 
-cdpath=( ~ )
+autoload -U compinit
+compinit
+
+setopt auto_cd
+setopt auto_pushd
+
+zstyle ':completion:*' matcher-list 'm:{A-Za-z}={a-zA-Z}'
 
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=1000
 SAVEHIST=1000
 
-bindkey -e
-
-autoload -U compinit
-
-setopt auto_cd
-setopt auto_pushd
-
-PS1='%{'$'\e[''38;5;153m%}[%n@%m]$%{'$'\e[''00m%}'
-RPS1='%{'$'\e[''38;5;153m%}[%d][%T]%{'$'\e[''00m%}'
+local BLUE=$'%{\e[38;5;153m%}'
+local DEFAULT=$'%{\e[00m%}'
+PROMPT=$BLUE'[%M][%d]'$'\n''$ '$DEFAULT
 
 function pcolor() {
-    for ((f = 0; f <= 255; f++)); do
-        printf "\e[38;5;%dm %3d#\e[m" $f $f
-        if [[ $f%8 -eq 7 ]] then
-            printf "\n"
-        fi
-    done
-    echo
+  for ((f = 0; f <= 255; f++)); do
+    printf "\e[38;5;%dm %3d#\e[m" $f $f
+    if [[ $f%8 -eq 7 ]] then
+      printf "\n"
+    fi
+  done
+  echo
 }
+
+[[ -f "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
