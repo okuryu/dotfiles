@@ -1,6 +1,8 @@
-export TERM=xterm-256color
+export TERM="xterm-256color"
 export CLICOLOR=1
-export LSCOLORS=gxfxcxdxbxegedabagacad
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+
+[[ -d "$HOME/local/bin" ]] && export PATH="$HOME/local/bin:$PATH"
 
 alias ll="ls -aFl"
 
