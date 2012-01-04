@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-I usually using these files.
+I usually using these files, and on available easy setup with ```setup.sh```.
 
 To setup:
 ------------
