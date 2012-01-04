@@ -53,17 +53,14 @@ setup_vim () {
   git submodule add git://github.com/altercation/vim-colors-solarized.git $VIM_BUNDLE/vim-colors-solarized
   git submodule add git://github.com/Shougo/neocomplcache.git $VIM_BUNDLE/neocomplcache
   ln -s $HOME_VIM/bundle/vim-pathogen/autoload/pathogen.vim $VIM_AUTOLOAD
-  return 0
 }
 
 setup_vimrc () {
   cp $LOCAL_VIMRC $HOME_VIMRC
-  return 0
 }
 
 setup_zshrc () {
   cp $LOCAL_ZSHRC $HOME_ZSHRC
-  return 0
 }
 
 main
