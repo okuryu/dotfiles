@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 LOCAL_DIR=`pwd`
 VIM=.vim
