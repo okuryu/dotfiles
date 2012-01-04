@@ -13,7 +13,7 @@ HOME_ZSHRC=$HOME/$ZSHRC
 VIM_BUNDLE=$HOME_VIM/bundle
 VIM_AUTOLOAD=$HOME_VIM/autoload
 
-function setup_vim() {
+setup_vim () {
   mkdir -p $HOME_VIM
   cd $HOME_VIM
   git init
@@ -25,12 +25,12 @@ function setup_vim() {
   return 0
 }
 
-function setup_vimrc() {
+setup_vimrc () {
   cp $LOCAL_VIMRC $HOME_VIMRC
   return 0
 }
 
-function setup_zshrc() {
+setup_zshrc () {
   cp $LOCAL_ZSHRC $HOME_ZSHRC
   return 0
 }
