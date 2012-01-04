@@ -4,12 +4,15 @@ LOCAL_DIR=`pwd`
 VIM=.vim
 VIMRC=.vimrc
 ZSHRC=.zshrc
+BASH_PROFILE=.bash_profile
 LOCAL_VIM=$LOCAL_DIR/$VIM
 LOCAL_VIMRC=$LOCAL_DIR/$VIMRC
 LOCAL_ZSHRC=$LOCAL_DIR/$ZSHRC
+LOCAL_BASH_PROFILE=$LOCAL_DIR/$BASH_PROFILE
 HOME_VIM=$HOME/$VIM
 HOME_VIMRC=$HOME/$VIMRC
 HOME_ZSHRC=$HOME/$ZSHRC
+HOME_BASH_PROFILE=$HOME/$BASH_PROFILE
 VIM_BUNDLE=$HOME_VIM/bundle
 VIM_AUTOLOAD=$HOME_VIM/autoload
 
@@ -42,6 +45,12 @@ main () {
   else
     setup_zshrc
   fi
+  if [ -f $HOME_BASH_PROFILE ]
+  then
+    echo NOTICE: $HOME_BASH_PROFILE is already exist.
+  else
+    setup_bash_profile
+  fi
 }
 
 setup_vim () {
@@ -61,6 +70,10 @@ setup_vimrc () {
 
 setup_zshrc () {
   cp $LOCAL_ZSHRC $HOME_ZSHRC
+}
+
+setup_bash_profile () {
+  cp $LOCAL_BASH_PROFILE $HOME_BASH_PROFILE
 }
 
 main
