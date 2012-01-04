@@ -13,6 +13,37 @@ HOME_ZSHRC=$HOME/$ZSHRC
 VIM_BUNDLE=$HOME_VIM/bundle
 VIM_AUTOLOAD=$HOME_VIM/autoload
 
+main () {
+  if [ ! -x `which git` ]
+  then
+    echo ERROR: git is not exist.
+    exit 1
+  fi
+  if [ ! -x `which zsh` ]
+  then
+    echo ERROR: zsh is not exist.
+    exit 1
+  fi
+  if [ -d $HOME_VIM ]
+  then
+    echo NOTICE: $HOME_VIM is already exist.
+  else
+    setup_vim
+  fi
+  if [ -f $HOME_VIMRC ]
+  then
+    echo NOTICE: $HOME_VIMRC is already exist.
+  else
+    setup_vimrc
+  fi
+  if [ -f $HOME_ZSHRC ]
+  then
+    echo NOTICE: $HOME_ZSHRC is already exist.
+  else
+    setup_zshrc
+  fi
+}
+
 setup_vim () {
   mkdir -p $HOME_VIM
   cd $HOME_VIM
@@ -35,36 +66,5 @@ setup_zshrc () {
   return 0
 }
 
-if [ ! -x `which git` ]
-then
-  echo ERROR: git is not exist.
-  exit 1
-fi
-
-if [ ! -x `which zsh` ]
-then
-  echo ERROR: zsh is not exist.
-  exit 1
-fi
-
-if [ -d $HOME_VIM ]
-then
-  echo NOTICE: $HOME_VIM is already exist.
-else
-  setup_vim
-fi
-
-if [ -f $HOME_VIMRC ]
-then
-  echo NOTICE: $HOME_VIMRC is already exist.
-else
-  setup_vimrc
-fi
-
-if [ -f $HOME_ZSHRC ]
-then
-  echo NOTICE: $HOME_ZSHRC is already exist.
-else
-  setup_zshrc
-fi
+main
 
