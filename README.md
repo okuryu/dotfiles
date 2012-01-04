@@ -3,7 +3,7 @@ dotfiles
 
 I usually using these files.
 
-Installation
+To setup:
 ------------
 
     $ git clone git://github.com/okuryu/dotfiles.git
