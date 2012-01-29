@@ -29,28 +29,24 @@ main () {
   fi
   if [ -d $HOME_VIM ]
   then
-    echo NOTICE: $HOME_VIM is already exist.
-  else
-    setup_vim
+    rm -rf $HOME_VIM
   fi
+  setup_vim
   if [ -f $HOME_VIMRC ]
   then
-    echo NOTICE: $HOME_VIMRC is already exist.
-  else
-    setup_vimrc
+    rm -rf $HOME_VIMRC
   fi
+  setup_vimrc
   if [ -f $HOME_ZSHRC ]
   then
-    echo NOTICE: $HOME_ZSHRC is already exist.
-  else
-    setup_zshrc
+    rm -rf $HOME_ZSHRC
   fi
+  setup_zshrc
   if [ -f $HOME_BASH_PROFILE ]
   then
-    echo NOTICE: $HOME_BASH_PROFILE is already exist.
-  else
-    setup_bash_profile
+    rm -rf $HOME_BASH_PROFILE
   fi
+  setup_bash_profile
 }
 
 setup_vim () {
