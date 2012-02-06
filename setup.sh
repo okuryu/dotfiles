@@ -3,6 +3,7 @@
 LOCAL_DIR=`pwd`
 VIM=.vim
 VIMRC=.vimrc
+ZSH=.zsh
 ZSHRC=.zshrc
 BASH_PROFILE=.bash_profile
 LOCAL_VIM=$LOCAL_DIR/$VIM
@@ -11,10 +12,12 @@ LOCAL_ZSHRC=$LOCAL_DIR/$ZSHRC
 LOCAL_BASH_PROFILE=$LOCAL_DIR/$BASH_PROFILE
 HOME_VIM=$HOME/$VIM
 HOME_VIMRC=$HOME/$VIMRC
+HOME_ZSH=$HOME/$ZSH
 HOME_ZSHRC=$HOME/$ZSHRC
 HOME_BASH_PROFILE=$HOME/$BASH_PROFILE
 VIM_BUNDLE=$HOME_VIM/bundle
 VIM_AUTOLOAD=$HOME_VIM/autoload
+ZSH_COMPLETION=$HOME_ZSH/functions/Completion
 
 main () {
   if [ ! -x `which git` ]
@@ -37,6 +40,11 @@ main () {
     rm -rf $HOME_VIMRC
   fi
   setup_vimrc
+  if [ -d $HOME_ZSH ]
+  then
+    rm -rf $HOME_ZSH
+  fi
+  setup_zsh
   if [ -f $HOME_ZSHRC ]
   then
     rm -rf $HOME_ZSHRC
@@ -62,6 +70,12 @@ setup_vim () {
 
 setup_vimrc () {
   cp $LOCAL_VIMRC $HOME_VIMRC
+}
+
+setup_zsh () {
+  mkdir -p $ZSH_COMPLETION
+  cd $ZSH_COMPLETION
+  curl -O https://raw.github.com/knu/zsh-git-escape-magic/master/git-escape-magic
 }
 
 setup_zshrc () {

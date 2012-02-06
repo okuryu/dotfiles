@@ -8,8 +8,11 @@ alias ll="ls -aFl"
 
 bindkey -e
 
+fpath=(~/.zsh/functions/Completion $fpath)
 autoload -U compinit
 compinit
+autoload -Uz git-escape-magic
+git-escape-magic
 
 setopt auto_cd
 setopt auto_pushd
