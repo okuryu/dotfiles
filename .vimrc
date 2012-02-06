@@ -7,7 +7,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set foldmethod=marker
-set t_Co=256
+set t_Co=16
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
 set background=dark
