@@ -75,7 +75,7 @@ setup_vimrc () {
 setup_zsh () {
   mkdir -p $ZSH_COMPLETION
   cd $ZSH_COMPLETION
-  curl -O https://raw.github.com/knu/zsh-git-escape-magic/master/git-escape-magic
+  curl -k -O https://raw.github.com/knu/zsh-git-escape-magic/master/git-escape-magic
 }
 
 setup_zshrc () {
