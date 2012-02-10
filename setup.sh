@@ -66,6 +66,7 @@ setup_vim () {
   git submodule add git://github.com/altercation/vim-colors-solarized.git $VIM_BUNDLE/vim-colors-solarized
   git submodule add git://github.com/Shougo/neocomplcache.git $VIM_BUNDLE/neocomplcache
   git submodule add git://github.com/vim-scripts/sudo.vim.git $VIM_BUNDLE/sudo
+  git submodule add git://github.com/tpope/vim-markdown.git $VIM_BUNDLE/vim-markdown
   ln -s $HOME_VIM/bundle/vim-pathogen/autoload/pathogen.vim $VIM_AUTOLOAD
 }
 
