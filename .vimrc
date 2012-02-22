@@ -14,7 +14,7 @@ set background=dark
 set list
 set listchars=eol:\ ,trail:-
 
-autocmd BufEnter Makefile set noexpandtab
+autocmd BufEnter Makefile set noexpandtab nolist
 
 call pathogen#infect()
 
