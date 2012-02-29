@@ -3,15 +3,18 @@
 LOCAL_DIR=`pwd`
 VIM=.vim
 VIMRC=.vimrc
+TMUXCONF=.tmux.conf
 ZSH=.zsh
 ZSHRC=.zshrc
 BASH_PROFILE=.bash_profile
 LOCAL_VIM=$LOCAL_DIR/$VIM
 LOCAL_VIMRC=$LOCAL_DIR/$VIMRC
+LOCAL_TMUXCONF=$LOCAL_DIR/$TMUXCONF
 LOCAL_ZSHRC=$LOCAL_DIR/$ZSHRC
 LOCAL_BASH_PROFILE=$LOCAL_DIR/$BASH_PROFILE
 HOME_VIM=$HOME/$VIM
 HOME_VIMRC=$HOME/$VIMRC
+HOME_TMUXCONF=$HOME/$TMUXCONF
 HOME_ZSH=$HOME/$ZSH
 HOME_ZSHRC=$HOME/$ZSHRC
 HOME_BASH_PROFILE=$HOME/$BASH_PROFILE
@@ -40,6 +43,7 @@ main () {
     rm -rf $HOME_VIMRC
   fi
   setup_vimrc
+  setup_tmuxconf
   if [ -d $HOME_ZSH ]
   then
     rm -rf $HOME_ZSH
@@ -72,6 +76,10 @@ setup_vim () {
 
 setup_vimrc () {
   cp $LOCAL_VIMRC $HOME_VIMRC
+}
+
+setup_tmuxconf () {
+  cp $LOCAL_TMUXCONF $HOME_TMUXCONF
 }
 
 setup_zsh () {
