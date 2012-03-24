@@ -3,6 +3,7 @@
 LOCAL_DIR=`pwd`
 DOT_FILES="
 .bash_profile
+.gitconfig
 .tmux.conf
 .vimrc
 .zshrc

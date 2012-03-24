@@ -1,0 +1,7 @@
+[user]
+  name = Ryuichi Okumura
+  email = okuryu@okuryu.com
+[color]
+  ui = true
+[core]
+  autocrlf = input
