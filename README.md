@@ -14,3 +14,4 @@ I usually using these files, and on available easy setup with ```setup.sh```.
   * [neocomplcache](http://github.com/Shougo/neocomplcache)
   * [sudo](http://github.com/vim-scripts/sudo)
   * [vim-markdown](http://github.com/tpope/vim-markdown)
+  * [jscomplete-vim](https://github.com/teramako/jscomplete-vim)
