@@ -19,6 +19,7 @@ autocmd BufEnter Makefile set noexpandtab nolist
 call pathogen#infect()
 
 let g:neocomplcache_enable_at_startup=1
+let g:jscomplete_use = ['dom', 'moz']
 
 syntax on
 colorscheme solarized
