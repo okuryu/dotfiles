@@ -3,9 +3,9 @@ set fileencodings=ucs-bom,utf-8,euc-jp,iso-2022-jp,sjis,cp932,cp20932
 set number
 set showmode
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set foldmethod=marker
 set t_Co=16
 set laststatus=2
