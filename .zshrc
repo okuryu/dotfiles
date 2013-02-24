@@ -9,23 +9,32 @@ alias ll="ls -aFl"
 bindkey -e
 
 fpath=(~/.zsh/functions/Completion $fpath)
-autoload -U compinit
+
+autoload -Uz colors
+colors
+autoload -Uz compinit
 compinit
 autoload -Uz git-escape-magic
 git-escape-magic
+autoload -Uz vcs_info
+
+precmd() {
+  vcs_info
+}
 
 setopt auto_cd
 setopt auto_pushd
+setopt transient_rprompt
 
 zstyle ':completion:*' matcher-list 'm:{A-Za-z}={a-zA-Z}'
+zstyle ':vcs_info:*' formats '(%r@%b) '
 
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=1000
 SAVEHIST=1000
 
-local BLUE=$'%{\e[38;5;153m%}'
-local DEFAULT=$'%{\e[00m%}'
-PROMPT=$BLUE'[%M][%d]'$'\n''$ '$DEFAULT
+PROMPT='%{$fg[blue]%}[%M] %{$fg[green]%}${vcs_info_msg_0_}%{$fg[blue]%}$%{$reset_color%} '
+RPROMPT='%{$fg[blue]%}[%~]%{$reset_color%}'
 
 function pcolor() {
   for ((f = 0; f <= 255; f++)); do
@@ -39,4 +48,3 @@ function pcolor() {
 
 [[ -f "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
