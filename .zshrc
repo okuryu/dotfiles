@@ -1,4 +1,5 @@
 export TERM="xterm-256color"
+export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 
