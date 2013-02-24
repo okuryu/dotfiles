@@ -25,6 +25,7 @@ precmd() {
 setopt auto_cd
 setopt auto_pushd
 setopt transient_rprompt
+setopt prompt_subst
 
 zstyle ':completion:*' matcher-list 'm:{A-Za-z}={a-zA-Z}'
 zstyle ':vcs_info:*' formats '(%r@%b) '
