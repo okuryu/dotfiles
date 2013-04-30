@@ -3,6 +3,7 @@ export TERM="xterm-256color"
 export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS="gxfxcxdxbxegedabagacad"
+export LC_ALL=C
 
 [[ -d "$HOME/local/bin" ]] && export PATH="$HOME/local/bin:$PATH"
 [[ -d "/usr/local/share/npm/bin" ]] && export PATH="/usr/local/share/npm/bin:$PATH"
