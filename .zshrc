@@ -14,17 +14,13 @@ bindkey -e
 
 fpath=(~/.zsh/functions/Completion $fpath)
 
+autoload -Uz is-at-least
 autoload -Uz colors
 colors
 autoload -Uz compinit
 compinit
 autoload -Uz git-escape-magic
 git-escape-magic
-autoload -Uz vcs_info
-
-precmd() {
-  vcs_info
-}
 
 setopt auto_cd
 setopt auto_pushd
@@ -32,13 +28,23 @@ setopt transient_rprompt
 setopt prompt_subst
 
 zstyle ':completion:*' matcher-list 'm:{A-Za-z}={a-zA-Z}'
-zstyle ':vcs_info:*' formats '(%r@%b) '
 
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=1000
 SAVEHIST=1000
 
-PROMPT='%{$fg[blue]%}[%M] %{$fg[green]%}${vcs_info_msg_0_}%{$fg[blue]%}$%{$reset_color%} '
+if is-at-least 5.0.0
+then
+  autoload -Uz vcs_info
+  precmd() {
+    vcs_info
+  }
+  zstyle ':vcs_info:*' formats '(%r@%b)'
+  PROMPT='%{$fg[blue]%}[%M]%{$fg[green]%}${vcs_info_msg_0_}%{$fg[blue]%}$%{$reset_color%} '
+else
+  PROMPT='%{$fg[blue]%}[%M]$%{$reset_color%} '
+fi
+
 RPROMPT='%{$fg[blue]%}[%~]%{$reset_color%}'
 
 function pcolor() {
