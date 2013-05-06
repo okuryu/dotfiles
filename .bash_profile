@@ -1,5 +1,7 @@
-if [ -x `which zsh` ]
-then
-  exec zsh
-fi
-
+for z in /usr/local/bin/zsh
+do
+    if [ -x $z ]
+    then
+        exec $z -l
+    fi
+done
