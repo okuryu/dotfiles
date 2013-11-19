@@ -1,4 +1,4 @@
-for z in /usr/local/bin/zsh
+for z in /bin/zsh /usr/local/bin/zsh
 do
     if [ -x $z ]
     then
