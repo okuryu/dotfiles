@@ -15,3 +15,5 @@ I usually using these files, and on available easy setup with ```setup.sh```.
   * [sudo](http://github.com/vim-scripts/sudo)
   * [vim-markdown](http://github.com/tpope/vim-markdown)
   * [jscomplete-vim](https://github.com/teramako/jscomplete-vim)
+  * [webapi-vim](https://github.com/mattn/webapi-vim)
+  * [gist-vim](https://github.com/mattn/gist-vim)
