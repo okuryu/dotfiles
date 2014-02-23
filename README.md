@@ -2,7 +2,7 @@
 
 I usually using these files, and on available easy setup with ```setup.sh```.
 
-## How to setup:
+## How to setup
 
     $ git clone git://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
 
