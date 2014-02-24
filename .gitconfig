@@ -7,3 +7,5 @@
   autocrlf = input
 [merge]
   ff = false
+[github]
+  user = okuryu
