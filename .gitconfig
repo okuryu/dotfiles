@@ -1,11 +1,12 @@
-[user]
-  name = Ryuichi Okumura
-  email = okuryu@okuryu.com
 [color]
   ui = true
 [core]
   autocrlf = input
-[merge]
-  ff = false
+  excludesfile = ~/.gitignore_global
 [github]
   user = okuryu
+[merge]
+  ff = false
+[user]
+  name = Ryuichi Okumura
+  email = okuryu@okuryu.com
