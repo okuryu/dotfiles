@@ -67,7 +67,7 @@ setup_vim () {
 setup_zsh () {
   mkdir -p ${ZSH_COMPLETION}
   cd ${ZSH_COMPLETION}
-  curl -k -O https://raw.github.com/knu/zsh-git-escape-magic/master/git-escape-magic
+  curl -k -O https://raw.githubusercontent.com/knu/zsh-git-escape-magic/master/git-escape-magic
 }
 
 main
