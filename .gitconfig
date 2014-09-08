@@ -3,6 +3,8 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
+[fetch]
+  prune = true
 [github]
   user = okuryu
 [merge]
