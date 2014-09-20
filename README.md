@@ -18,3 +18,7 @@ $ git clone git://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
 * [vim-markdown](https://github.com/tpope/vim-markdown)
 * [webapi-vim](https://github.com/mattn/webapi-vim)
 * [gist-vim](https://github.com/mattn/gist-vim)
+
+## Author
+
+* Ryuichi Okumura ([@okuryu](https://github.com/okuryu))
