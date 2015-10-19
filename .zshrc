@@ -1,6 +1,6 @@
 export TERM=xterm-256color
 export EDITOR=vim
-export PATH=/usr/local/bin:$PATH
+export PATH=~/.rbenv/bin:/usr/local/bin:$PATH
 
 alias ll="ls -aFl"
 
@@ -45,3 +45,4 @@ function pcolor() {
 }
 
 [[ -f "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+eval "$(rbenv init - zsh)"
