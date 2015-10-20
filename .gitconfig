@@ -7,8 +7,6 @@
   prune = true
 [github]
   user = okuryu
-[merge]
-  ff = false
 [user]
   name = Ryuichi Okumura
   email = okuryu@okuryu.com
