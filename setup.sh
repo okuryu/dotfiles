@@ -62,6 +62,7 @@ setup_vim () {
   git submodule add git://github.com/mattn/webapi-vim.git ${VIM_BUNDLE}/webapi-vim
   git submodule add git://github.com/mattn/gist-vim.git ${VIM_BUNDLE}/gist-vim
   git submodule add git://github.com/mxw/vim-jsx.git ${VIM_BUNDLE}/vim-jsx
+  git submodule add git://github.com/fatih/vim-go.git ${VIM_BUNDLE}/vim-go
   ln -s ${HOME_VIM}/bundle/vim-pathogen/autoload/pathogen.vim ${VIM_AUTOLOAD}
 }
 
