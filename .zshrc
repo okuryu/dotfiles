@@ -45,4 +45,4 @@ function pcolor() {
 }
 
 [[ -f "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
-eval "$(rbenv init - zsh)"
+[[ -x /usr/local/bin/rbenv ]] && eval "$(rbenv init - zsh)"
