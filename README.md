@@ -19,6 +19,7 @@ $ git clone git://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
 * [webapi-vim](https://github.com/mattn/webapi-vim)
 * [gist-vim](https://github.com/mattn/gist-vim)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
+* [vim-go](https://github.com/fatih/vim-go)
 
 ## Author
 
