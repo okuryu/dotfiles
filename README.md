@@ -10,16 +10,18 @@ $ git clone git://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
 
 ## Dependencies
 
-* [zsh-git-escape-magic](https://github.com/knu/zsh-git-escape-magic)
-* [vim-pathogen](https://github.com/tpope/vim-pathogen)
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [neocomplcache](https://github.com/Shougo/neocomplcache)
-* [sudo](https://github.com/vim-scripts/sudo)
-* [vim-markdown](https://github.com/tpope/vim-markdown)
-* [webapi-vim](https://github.com/mattn/webapi-vim)
-* [gist-vim](https://github.com/mattn/gist-vim)
-* [vim-jsx](https://github.com/mxw/vim-jsx)
-* [vim-go](https://github.com/fatih/vim-go)
+* Zsh
+  * [zsh-git-escape-magic](https://github.com/knu/zsh-git-escape-magic)
+* Vim
+  * [vim-pathogen](https://github.com/tpope/vim-pathogen)
+  * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+  * [neocomplcache](https://github.com/Shougo/neocomplcache)
+  * [sudo](https://github.com/vim-scripts/sudo)
+  * [vim-markdown](https://github.com/tpope/vim-markdown)
+  * [webapi-vim](https://github.com/mattn/webapi-vim)
+  * [gist-vim](https://github.com/mattn/gist-vim)
+  * [vim-jsx](https://github.com/mxw/vim-jsx)
+  * [vim-go](https://github.com/fatih/vim-go)
 
 ## Author
 
