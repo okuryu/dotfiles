@@ -22,6 +22,7 @@ $ git clone git://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
   * [gist-vim](https://github.com/mattn/gist-vim)
   * [vim-jsx](https://github.com/mxw/vim-jsx)
   * [vim-go](https://github.com/fatih/vim-go)
+* [rbenv](https://github.com/rbenv/rbenv)
 
 ## Author
 
