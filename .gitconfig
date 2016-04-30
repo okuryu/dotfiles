@@ -1,3 +1,5 @@
+[commit]
+  gpgsign = true
 [color]
   ui = true
 [core]
@@ -10,3 +12,4 @@
 [user]
   name = Ryuichi Okumura
   email = okuryu@okuryu.com
+  signingkey = CDD9571E
