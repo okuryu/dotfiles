@@ -1,3 +1,4 @@
+export HOMEBREW_NO_ANALYTICS=1
 export TERM=xterm-256color
 export EDITOR=vim
 export PATH=~/.rbenv/bin:/usr/local/bin:$PATH
