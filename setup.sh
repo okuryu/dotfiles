@@ -1,75 +1,44 @@
-#!/bin/bash
-
-LOCAL_DIR=`pwd`
-DOT_FILES="
-.bash_profile
-.gitconfig
-.gitignore_global
-.tmux.conf
-.vimrc
-.zshrc
-"
-VIM=.vim
-ZSH=.zsh
-LOCAL_VIM=${LOCAL_DIR}/${VIM}
-HOME_VIM=$HOME/${VIM}
-HOME_ZSH=$HOME/${ZSH}
-VIM_BUNDLE=${HOME_VIM}/bundle
-VIM_AUTOLOAD=${HOME_VIM}/autoload
-ZSH_COMPLETION=${HOME_ZSH}/functions/Completion
-
-setup_dot_files () {
-  for DOT_FILE in ${DOT_FILES}
-  do
-    cp ${LOCAL_DIR}/${DOT_FILE} $HOME/${DOT_FILE}
-  done
-}
+#!/bin/sh
 
 main () {
+  local C_GREEN="\033[0;32m"
+  local C_NONE="\033[0;00m"
   if [ ! -x `which git` ]
   then
     echo ERROR: git is not exist.
     exit 1
   fi
-  if [ ! -x `which zsh` ]
-  then
-    echo ERROR: zsh is not exist.
-    exit 1
-  fi
-  if [ -d ${HOME_VIM} ]
-  then
-    rm -rf ${HOME_VIM}
-  fi
-  setup_vim
-  if [ -d ${HOME_ZSH} ]
-  then
-    rm -rf ${HOME_ZSH}
-  fi
-  setup_zsh
-  setup_dot_files
-}
-
-setup_vim () {
-  mkdir -p ${HOME_VIM}
-  cd ${HOME_VIM}
-  git init
-  mkdir ${VIM_BUNDLE} ${VIM_AUTOLOAD}
-  git submodule add git://github.com/tpope/vim-pathogen.git ${VIM_BUNDLE}/vim-pathogen
-  git submodule add git://github.com/altercation/vim-colors-solarized.git ${VIM_BUNDLE}/vim-colors-solarized
-  git submodule add git://github.com/Shougo/neocomplcache.git ${VIM_BUNDLE}/neocomplcache
-  git submodule add git://github.com/vim-scripts/sudo.vim.git ${VIM_BUNDLE}/sudo
-  git submodule add git://github.com/tpope/vim-markdown.git ${VIM_BUNDLE}/vim-markdown
-  git submodule add git://github.com/mattn/webapi-vim.git ${VIM_BUNDLE}/webapi-vim
-  git submodule add git://github.com/mattn/gist-vim.git ${VIM_BUNDLE}/gist-vim
-  git submodule add git://github.com/mxw/vim-jsx.git ${VIM_BUNDLE}/vim-jsx
-  git submodule add git://github.com/fatih/vim-go.git ${VIM_BUNDLE}/vim-go
-  ln -s ${HOME_VIM}/bundle/vim-pathogen/autoload/pathogen.vim ${VIM_AUTOLOAD}
-}
-
-setup_zsh () {
-  mkdir -p ${ZSH_COMPLETION}
-  cd ${ZSH_COMPLETION}
-  curl -k -O https://raw.githubusercontent.com/knu/zsh-git-escape-magic/master/git-escape-magic
+  echo ${C_GREEN}removing ~/.tmux.conf${C_NONE}
+  [ -f ~/.tmux.conf ] && rm -f ~/.tmux.conf
+  echo ${C_GREEN}removing ~/.zsh${C_NONE}
+  [ -d ~/.zsh ] && rm -rf ~/.zsh
+  echo ${C_GREEN}removing ~/.zshrc${C_NONE}
+  [ -f ~/.zshrc ] && rm -f ~/.zshrc
+  echo ${C_GREEN}removing ~/.bash_profile${C_NONE}
+  [ -f ~/.bash_profile ] && rm -f ~/.bash_profile
+  echo ${C_GREEN}configuring ~/.config/fish${C_NONE}
+  [ ! -d ~/.config/fish ] && mkdir -p ~/.config/fish
+  echo ${C_GREEN}configuring ~/.config/fish/config.fish${C_NONE}
+  cp ./config.fish ~/.config/fish/config.fish
+  echo ${C_GREEN}configuring ~/.gitconfig${C_NONE}
+  cp ./.gitconfig ~/.gitconfig
+  echo ${C_GREEN}configuring ~/.gitignore_global${C_NONE}
+  cp ./.gitignore_global ~/.gitignore_global
+  echo ${C_GREEN}configuring ~/.vimrc${C_NONE}
+  cp ./.vimrc ~/.vimrc
+  echo ${C_GREEN}removing ~/.vim${C_NONE}
+  [ -d ~/.vim ] && rm -rf ~/.vim
+  echo ${C_GREEN}configuring ~/.vim${C_NONE}
+  mkdir -p ~/.vim/autoload ~/.vim/bundle
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+  cd ~/.vim/bundle
+  git clone https://github.com/altercation/vim-colors-solarized.git
+  git clone https://github.com/Shougo/neocomplete.vim.git
+  git clone https://github.com/tpope/vim-markdown.git
+  git clone https://github.com/mattn/webapi-vim.git
+  git clone https://github.com/mattn/gist-vim.git
+  git clone https://github.com/fatih/vim-go.git
+  echo ${C_GREEN}[OK]${C_NONE}
 }
 
 main
