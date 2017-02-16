@@ -1,23 +1,14 @@
 [commit]
-  gpgsign = true
+	gpgsign = true
 [color]
-  ui = true
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+	ui = true
 [core]
-  autocrlf = input
-  excludesfile = ~/.gitignore_global
-[fetch]
-  prune = true
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [github]
-  user = okuryu
-[pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
+	user = okuryu
 [user]
-  name = Ryuichi Okumura
-  email = okuryu@okuryu.com
-  signingkey = CDD9571E
+	name = Ryuichi Okumura
+	email = okuryu@okuryu.com
+	signingkey = CDD9571E
