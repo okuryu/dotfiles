@@ -29,15 +29,11 @@ main () {
   echo ${C_GREEN}removing ~/.vim${C_NONE}
   [ -d ~/.vim ] && rm -rf ~/.vim
   echo ${C_GREEN}configuring ~/.vim${C_NONE}
-  mkdir -p ~/.vim/autoload ~/.vim/bundle
-  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-  cd ~/.vim/bundle
-  git clone https://github.com/altercation/vim-colors-solarized.git
-  git clone https://github.com/Shougo/neocomplete.vim.git
-  git clone https://github.com/tpope/vim-markdown.git
-  git clone https://github.com/mattn/webapi-vim.git
-  git clone https://github.com/mattn/gist-vim.git
-  git clone https://github.com/fatih/vim-go.git
+  git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/pack/plugins/start/vim-colors-solarized
+  git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/pack/plugins/start/neocomplete.vim
+  git clone https://github.com/mattn/webapi-vim.git ~/.vim/pack/plugins/start/webapi-vim
+  git clone https://github.com/mattn/gist-vim.git ~/.vim/pack/plugins/start/gist-vim
+  git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
   echo ${C_GREEN}[OK]${C_NONE}
 }
 
