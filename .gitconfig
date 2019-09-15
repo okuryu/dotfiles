@@ -4,7 +4,7 @@
 	ui = true
 [core]
 	autocrlf = input
-	editor = vim
+	editor = code --wait --new-window
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [github]
@@ -13,3 +13,7 @@
 	name = Ryuichi Okumura
 	email = okuryu@okuryu.com
 	signingkey = CDD9571E
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --new-window --diff $LOCAL $REMOTE
