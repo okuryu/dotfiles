@@ -20,22 +20,16 @@ main () {
   [ ! -d ~/.config/fish ] && mkdir -p ~/.config/fish
   echo ${C_GREEN}configuring ~/.config/fish/config.fish${C_NONE}
   cp ./config.fish ~/.config/fish/config.fish
-  echo ${C_GREEN}configuring ~/.config/fish/functions/gvm.fish${C_NONE}
-  cp ./gvm.fish ~/.config/fish/functions/gvm.fish
+  echo ${C_GREEN}removing ~/.config/fish/functions/gvm.fish${C_NONE}
+  [ -f ~/.config/fish/functions/gvm.fish ] && rm -f ~/.config/fish/functions/gvm.fish
   echo ${C_GREEN}configuring ~/.gitconfig${C_NONE}
   cp ./.gitconfig ~/.gitconfig
   echo ${C_GREEN}configuring ~/.gitignore_global${C_NONE}
   cp ./.gitignore_global ~/.gitignore_global
-  echo ${C_GREEN}configuring ~/.vimrc${C_NONE}
-  cp ./.vimrc ~/.vimrc
+  echo ${C_GREEN}removing ~/.vimrc${C_NONE}
+  [ -f ~/.vimrc ] && rm -f ~/.vimrc
   echo ${C_GREEN}removing ~/.vim${C_NONE}
   [ -d ~/.vim ] && rm -rf ~/.vim
-  echo ${C_GREEN}configuring ~/.vim${C_NONE}
-  git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/pack/plugins/start/vim-colors-solarized
-  git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/pack/plugins/start/neocomplete.vim
-  git clone https://github.com/mattn/webapi-vim.git ~/.vim/pack/plugins/start/webapi-vim
-  git clone https://github.com/mattn/gist-vim.git ~/.vim/pack/plugins/start/gist-vim
-  git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
   echo ${C_GREEN}[OK]${C_NONE}
 }
 
