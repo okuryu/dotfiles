@@ -1,9 +1,10 @@
-[commit]
-	gpgsign = true
 [color]
 	ui = true
+[commit]
+	gpgsign = true
 [core]
 	autocrlf = input
+	quotepath = false
 	editor = code --wait --new-window
 	excludesfile = ~/.gitignore_global
 	pager = delta
@@ -14,4 +15,3 @@
 [user]
 	name = Ryuichi Okumura
 	email = okuryu@okuryu.com
-	signingkey = F7125919
