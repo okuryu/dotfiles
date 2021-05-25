@@ -10,6 +10,7 @@
 	pager = delta
 [delta]
 	features = line-numbers
+	syntax-theme = GitHub
 [interactive]
 	diffFilter = delta --color-only
 [user]
