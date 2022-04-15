@@ -16,3 +16,5 @@
 [user]
 	name = Ryuichi Okumura
 	email = okuryu@okuryu.com
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
