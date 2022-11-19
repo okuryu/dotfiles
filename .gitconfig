@@ -11,10 +11,13 @@
 [delta]
 	features = line-numbers
 	syntax-theme = GitHub
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [interactive]
 	diffFilter = delta --color-only
 [user]
 	name = Ryuichi Okumura
 	email = okuryu@okuryu.com
-[includeIf "gitdir:~/work/"]
-  path = ~/.gitconfig-work
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF08caL+Tz9THLASxwr4DLSSaGeA1Z3lrO3Ii3ch1wL3
