@@ -21,3 +21,5 @@
 	name = Ryuichi Okumura
 	email = okuryu@okuryu.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF08caL+Tz9THLASxwr4DLSSaGeA1Z3lrO3Ii3ch1wL3
+[includeIf "gitdir:~/work/"]
+	path = ~/.gitconfig-work
