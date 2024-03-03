@@ -28,8 +28,6 @@ main () {
   [ ! -d ~/.config/fish ] && mkdir -p ~/.config/fish
   echo -e ${C_GREEN}configuring ~/.config/fish/config.fish${C_NONE}
   cp ./config.fish ~/.config/fish/config.fish
-  echo -e ${C_GREEN}configuring ~/.config/fish/functions/jdk.fish${C_NONE}
-  cp ./jdk.fish ~/.config/fish/functions/jdk.fish
   echo -e ${C_GREEN}configuring ~/.gitconfig${C_NONE}
   cp ./.gitconfig ~/.gitconfig
   echo -e ${C_GREEN}configuring ~/.gitignore_global${C_NONE}
