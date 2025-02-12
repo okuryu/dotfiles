@@ -10,7 +10,8 @@
 	pager = delta
 [delta]
 	features = line-numbers
-	syntax-theme = GitHub
+	dark = true
+	navigate = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
