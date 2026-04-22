@@ -42,9 +42,9 @@ check_required_tools() {
 main () {
   check_required_tools
 
-  echo -e "configuring $HOME/.config"
-  [ ! -d "$HOME/.config" ] && mkdir -p "$HOME/.config"
-  cp -R ./.config/ "$HOME/.config/"
+  echo -e "configuring $HOME/.config/fish/config.fish"
+  [ ! -d "$HOME/.config/fish" ] && mkdir -p "$HOME/.config/fish"
+  cp ./.config/fish/config.fish "$HOME/.config/fish/config.fish"
 
   echo -e "configuring $HOME/.gitconfig"
   cp ./.gitconfig "$HOME/.gitconfig"
