@@ -1,40 +1,61 @@
 #!/bin/bash
 
-main () {
-  local C_GREEN="\033[0;32m"
-  local C_NONE="\033[0;00m"
-  if [ ! -x `which git` ]
-  then
-    echo ERROR: git is not exist.
+has_omf() {
+  if [ -d "$HOME/.local/share/omf" ]; then
+    return 0
+  fi
+
+  if [ -f "$HOME/.config/fish/functions/omf.fish" ]; then
+    return 0
+  fi
+
+  return 1
+}
+
+check_required_tools() {
+  local tools=("git" "fish" "fzf")
+  local missing=()
+
+  for tool in "${tools[@]}"; do
+    if ! command -v "$tool" &> /dev/null; then
+      missing+=("$tool")
+    else
+      echo -e "✓ $tool is installed"
+    fi
+  done
+
+  if ! has_omf; then
+    missing+=("omf")
+  else
+    echo -e "✓ omf is installed"
+  fi
+
+  if [ ${#missing[@]} -gt 0 ]; then
+    echo -e "ERROR: The following required tools are not installed:"
+    printf "  - %s\n" "${missing[@]}"
     exit 1
   fi
-  echo -e ${C_GREEN}removing ~/.tmux.conf${C_NONE}
-  [ -f ~/.tmux.conf ] && rm -f ~/.tmux.conf
-  echo -e ${C_GREEN}removing ~/.zsh${C_NONE}
-  [ -d ~/.zsh ] && rm -rf ~/.zsh
-  echo -e ${C_GREEN}removing ~/.zshrc${C_NONE}
-  [ -f ~/.zshrc ] && rm -f ~/.zshrc
-  echo -e ${C_GREEN}removing ~/.bash_profile${C_NONE}
-  [ -f ~/.bash_profile ] && rm -f ~/.bash_profile
-  echo -e ${C_GREEN}removing ~/.vim${C_NONE}
-  [ -d ~/.vim ] && rm -rf ~/.vim
-  echo -e ${C_GREEN}removing ~/.vimrc${C_NONE}
-  [ -f ~/.vimrc ] && rm -f ~/.vimrc
-  echo -e ${C_GREEN}removing ~/.config/fish/functions/gvm.fish${C_NONE}
-  [ -f ~/.config/fish/functions/gvm.fish ] && rm -f ~/.config/fish/functions/gvm.fish
-  echo -e ${C_GREEN}removing ~/.config/fish/functions/jdk.fish${C_NONE}
-  [ -f ~/.config/fish/functions/jdk.fish ] && rm -f ~/.config/fish/functions/jdk.fish
-  echo -e ${C_GREEN}configuring ~/.config/fish${C_NONE}
-  [ ! -d ~/.config/fish ] && mkdir -p ~/.config/fish
-  echo -e ${C_GREEN}configuring ~/.config/fish/config.fish${C_NONE}
-  cp ./config.fish ~/.config/fish/config.fish
-  echo -e ${C_GREEN}configuring ~/.gitconfig${C_NONE}
-  cp ./.gitconfig ~/.gitconfig
-  echo -e ${C_GREEN}configuring ~/.gitignore_global${C_NONE}
-  cp ./.gitignore_global ~/.gitignore_global
-  echo -e ${C_GREEN}configuring ~/.nanorc${C_NONE}
-  cp ./.nanorc ~/.nanorc
-  echo -e ${C_GREEN}[OK]${C_NONE}
+
+  echo -e "✓ All required tools are installed"
+}
+
+main () {
+  check_required_tools
+
+  echo -e "configuring $HOME/.config/fish/config.fish"
+  [ ! -d "$HOME/.config/fish" ] && mkdir -p "$HOME/.config/fish"
+  cp ./.config/fish/config.fish "$HOME/.config/fish/config.fish"
+
+  echo -e "configuring $HOME/.gitconfig"
+  cp ./.gitconfig "$HOME/.gitconfig"
+
+  echo -e "configuring $HOME/.gitignore_global"
+  cp ./.gitignore_global "$HOME/.gitignore_global"
+
+  echo -e "configuring $HOME/.nanorc"
+  cp ./.nanorc "$HOME/.nanorc"
+
+  echo -e "✓ Configuration complete"
 }
 
 main

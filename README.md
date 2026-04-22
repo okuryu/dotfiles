@@ -1,13 +1,11 @@
-# dotfiles
+# Dotfiles
 
 I usually using these files.
 
-## How to setup
+## Installation
 
-```
-$ git clone https://github.com/okuryu/dotfiles.git
-$ cd dotfiles
-$ ./setup.sh
+```bash
+git clone https://github.com/okuryu/dotfiles.git && cd dotfiles && ./setup.sh
 ```
 
 ## Author
