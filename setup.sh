@@ -13,7 +13,7 @@ has_omf() {
 }
 
 check_required_tools() {
-  local tools=("git" "fish" "go" "fzf")
+  local tools=("git" "fish" "fzf")
   local missing=()
 
   for tool in "${tools[@]}"; do
